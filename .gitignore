@@ -1,0 +1,11 @@
+.next
+.next-dev
+node_modules
+*.log
+*.out
+*.err
+check-*.png
+preview-*.png
+local-page*.png
+localhost-*.png
+chicago-ref.png

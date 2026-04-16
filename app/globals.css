@@ -1,0 +1,871 @@
+html {
+  background: #0d0806;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+#stk-clone {
+  overflow-x: clip;
+}
+
+#stk-clone [x-cloak] {
+  display: none !important;
+}
+
+#stk-clone .popup-navigation {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#stk-clone .main-navigation.is-open {
+  display: flex !important;
+}
+
+#stk-clone .accordion-item .accordion-header button {
+  transition: transform 0.35s ease;
+}
+
+#stk-clone .accordion-panel {
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+}
+
+#stk-clone .happenings-hidden {
+  display: none !important;
+}
+
+#stk-clone .clone-map-pin {
+  background: #cfad52;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px rgba(207, 173, 82, 0.18);
+  height: 14px;
+  width: 14px;
+}
+
+#stk-clone .msteakhouse-map-fallback {
+  align-items: center;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(200, 148, 82, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(16, 11, 8, 0.96), rgba(20, 13, 10, 0.9));
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  padding: 1.5rem;
+}
+
+#stk-clone .map-fallback-card {
+  align-items: center;
+  background: rgba(30, 20, 14, 0.92);
+  border: 1px solid rgba(232, 202, 155, 0.16);
+  border-radius: 1.25rem;
+  color: #f4e5cd;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 21rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+#stk-clone .map-fallback-card .clone-map-pin {
+  margin-bottom: 0.25rem;
+}
+
+#stk-clone .map-fallback-card p {
+  line-height: 1.7;
+  margin: 0;
+}
+
+#stk-clone .map-fallback-card a {
+  border-bottom: 1px solid rgba(232, 202, 155, 0.35);
+  color: #ebc994;
+  letter-spacing: 0.12em;
+  padding-bottom: 0.2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#stk-clone.msteakhouse-theme {
+  --m-bg: #120b08;
+  --m-bg-soft: #18100c;
+  --m-panel: #1c130f;
+  --m-panel-alt: #231813;
+  --m-line: rgba(232, 202, 155, 0.14);
+  --m-line-strong: rgba(232, 202, 155, 0.28);
+  --m-gold: #c89452;
+  --m-gold-soft: #ebc994;
+  --m-cream: #f4e5cd;
+  --m-text: #dfccb0;
+  --m-text-soft: #b79f7f;
+  background:
+    radial-gradient(circle at top, rgba(194, 140, 72, 0.16), transparent 30%),
+    linear-gradient(180deg, #140d09 0%, #0f0a07 100%);
+}
+
+#stk-clone.msteakhouse-theme .text-gold-foil,
+#stk-clone.msteakhouse-theme .menu-list-item:hover,
+#stk-clone.msteakhouse-theme .nav-link .inner:hover {
+  color: var(--m-gold) !important;
+}
+
+#stk-clone.msteakhouse-theme .bg-dark-gray,
+#stk-clone.msteakhouse-theme .main-footer,
+#stk-clone.msteakhouse-theme footer {
+  background-color: #110b08 !important;
+}
+
+#stk-clone.msteakhouse-theme .bg-off-white {
+  background: #efe1cf !important;
+}
+
+#stk-clone.msteakhouse-theme .btn.btn-primary.gold,
+#stk-clone.msteakhouse-theme .btn.btn-square.gold,
+#stk-clone.msteakhouse-theme .btn.btn-primary:not(.gold),
+#stk-clone.msteakhouse-theme .btn.red,
+#stk-clone.msteakhouse-theme .reserve-now-button.red {
+  background: linear-gradient(135deg, #e3c98f, #bf8540) !important;
+  border-color: rgba(232, 202, 155, 0.4) !important;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+  color: #17110d !important;
+}
+
+#stk-clone.msteakhouse-theme .btn.red span,
+#stk-clone.msteakhouse-theme .reserve-now-button.red span,
+#stk-clone.msteakhouse-theme .btn.btn-primary.gold span,
+#stk-clone.msteakhouse-theme .btn.btn-square.gold span {
+  color: #17110d !important;
+}
+
+#stk-clone.msteakhouse-theme .btn.btn-secondary,
+#stk-clone.msteakhouse-theme .btn.btn-square.dark,
+#stk-clone.msteakhouse-theme .hero-menu-link {
+  background: rgba(18, 12, 9, 0.88) !important;
+  border-color: rgba(232, 202, 155, 0.38) !important;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+  color: var(--m-cream) !important;
+  text-decoration: none !important;
+}
+
+#stk-clone.msteakhouse-theme .btn.btn-square.dark span {
+  color: var(--m-cream) !important;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-site-header {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-site-header.is-scrolled {
+  backdrop-filter: blur(16px);
+  border-color: rgba(232, 202, 155, 0.12);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-nav-wrapper {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-brand-link {
+  align-items: center !important;
+  flex: 0 0 auto !important;
+  justify-content: flex-start !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  text-decoration: none !important;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-brand,
+#stk-clone.msteakhouse-theme .msteakhouse-footer-brand {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.75rem;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-brand img,
+#stk-clone.msteakhouse-theme .msteakhouse-footer-brand img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 56px;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-brand-copy {
+  color: var(--m-cream);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-transform: uppercase;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-brand-copy span {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-brand-copy small {
+  color: var(--m-gold-soft);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+}
+
+#stk-clone.msteakhouse-theme #scroll-logo {
+  opacity: 1 !important;
+  transition: none;
+  visibility: visible !important;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-main-navigation a,
+#stk-clone.msteakhouse-theme #menu-footer-menu-gb a {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-main-navigation {
+  basis: auto !important;
+  flex: 1 1 auto !important;
+  min-width: 0;
+}
+
+#stk-clone.msteakhouse-theme #menu-main-menu-gb a {
+  color: var(--m-cream) !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+#stk-clone.msteakhouse-theme #menu-main-menu-gb {
+  gap: 2rem !important;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-header-cta {
+  align-items: center;
+  flex: 0 0 auto !important;
+  margin-left: auto !important;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-header-cta .btn {
+  border-radius: 999px;
+  min-width: 11.5rem;
+  padding-inline: 1.65rem;
+}
+
+#stk-clone.msteakhouse-theme .hero {
+  isolation: isolate;
+  min-height: clamp(32rem, 82svh, 58rem);
+  position: relative;
+}
+
+#stk-clone.msteakhouse-theme .hero::after {
+  background:
+    linear-gradient(180deg, rgba(9, 6, 4, 0.1) 0%, rgba(9, 6, 4, 0.62) 100%),
+    linear-gradient(90deg, rgba(9, 6, 4, 0.7) 0%, rgba(9, 6, 4, 0) 54%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+#stk-clone.msteakhouse-theme .hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-hero-content {
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  margin-inline: auto;
+  max-width: 56rem;
+  padding: 8.25rem 1.25rem 5.5rem !important;
+  text-align: left !important;
+}
+
+#stk-clone.msteakhouse-theme .hero-content picture {
+  display: none !important;
+}
+
+#stk-clone.msteakhouse-theme .hero-eyebrow {
+  color: var(--m-gold-soft);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+#stk-clone.msteakhouse-theme .hero-content h1 {
+  letter-spacing: 0.12em;
+  line-height: 0.96;
+  margin: 0;
+  max-width: 10ch;
+  text-wrap: balance;
+}
+
+#stk-clone.msteakhouse-theme .hero-content h4 {
+  color: var(--m-gold-soft) !important;
+  letter-spacing: 0.18em;
+  margin-top: 0.95rem;
+}
+
+#stk-clone.msteakhouse-theme .hero-lead {
+  color: rgba(244, 229, 205, 0.82);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 1.1rem 0 0;
+  max-width: 36rem;
+}
+
+#stk-clone.msteakhouse-theme .hero-eyebrow,
+#stk-clone.msteakhouse-theme .hero-content h1,
+#stk-clone.msteakhouse-theme .hero-content h4,
+#stk-clone.msteakhouse-theme .hero-lead {
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+#stk-clone.msteakhouse-theme .hero-actions {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+#stk-clone.msteakhouse-theme .hero-actions .btn,
+#stk-clone.msteakhouse-theme .hero-actions a {
+  align-items: center;
+  border-radius: 999px !important;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  height: 3.45rem;
+  justify-content: center;
+  letter-spacing: 0.18em;
+  min-width: 14rem;
+  padding-inline: 1.6rem;
+  text-transform: uppercase;
+}
+
+#stk-clone.msteakhouse-theme #sub-nav-anchor-links,
+#stk-clone.msteakhouse-theme #Location-Details,
+#stk-clone.msteakhouse-theme #Experience-Section,
+#stk-clone.msteakhouse-theme #Menu-List,
+#stk-clone.msteakhouse-theme #Happenings-Grid,
+#stk-clone.msteakhouse-theme #Careers-Section,
+#stk-clone.msteakhouse-theme #Faq-Section {
+  background: transparent !important;
+}
+
+#stk-clone.msteakhouse-theme #sub-nav-anchor-links {
+  backdrop-filter: blur(12px);
+  background: rgba(239, 225, 207, 0.96) !important;
+}
+
+#stk-clone.msteakhouse-theme #sub-nav-anchor-links .inner {
+  color: #18120f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+#stk-clone.msteakhouse-theme #Location-Details > .container > .grid:last-child h4,
+#stk-clone.msteakhouse-theme #Experience-Section h2,
+#stk-clone.msteakhouse-theme #Experience-Section h4,
+#stk-clone.msteakhouse-theme #Careers-Section h2,
+#stk-clone.msteakhouse-theme #Careers-Section h3,
+#stk-clone.msteakhouse-theme #Faq-Section h2,
+#stk-clone.msteakhouse-theme #Faq-Section h4,
+#stk-clone.msteakhouse-theme #Happenings-Grid h2 {
+  color: var(--m-cream) !important;
+}
+
+#stk-clone.msteakhouse-theme #Location-Details > .container > .grid:last-child p,
+#stk-clone.msteakhouse-theme #Location-Details > .container > .grid:last-child a,
+#stk-clone.msteakhouse-theme #Experience-Section p,
+#stk-clone.msteakhouse-theme #Careers-Section p,
+#stk-clone.msteakhouse-theme #Faq-Section p {
+  color: var(--m-text) !important;
+}
+
+#stk-clone.msteakhouse-theme #Experience-Section .container,
+#stk-clone.msteakhouse-theme #Faq-Section .container {
+  max-width: 78rem;
+}
+
+#stk-clone.msteakhouse-theme #Experience-Section p,
+#stk-clone.msteakhouse-theme #Careers-Section .body-text p {
+  line-height: 1.8;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-story-section .body-text p + p,
+#stk-clone.msteakhouse-theme .msteakhouse-career-section .body-text p + p {
+  margin-top: 1rem;
+}
+
+#stk-clone.msteakhouse-theme .career-role-list {
+  color: var(--m-cream);
+  column-gap: 2rem;
+  columns: 2;
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;
+}
+
+#stk-clone.msteakhouse-theme .career-role-list li {
+  break-inside: avoid;
+  margin-bottom: 0.65rem;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+#stk-clone.msteakhouse-theme .career-role-list li::before {
+  color: var(--m-gold);
+  content: "•";
+  left: 0;
+  position: absolute;
+}
+
+#stk-clone.msteakhouse-theme .menu-list a,
+#stk-clone.msteakhouse-theme .location-details a.underline,
+#stk-clone.msteakhouse-theme .accordion-panel a,
+#stk-clone.msteakhouse-theme .body-text a {
+  color: var(--m-gold);
+}
+
+#stk-clone.msteakhouse-theme .menu-list-item {
+  border-bottom-color: rgba(232, 202, 155, 0.18) !important;
+  color: var(--m-cream) !important;
+}
+
+#stk-clone.msteakhouse-theme .link-card,
+#stk-clone.msteakhouse-theme .happenings-card {
+  overflow: hidden;
+}
+
+#stk-clone.msteakhouse-theme .happenings-card-body {
+  background: linear-gradient(180deg, #1a120e, #140d0a) !important;
+  min-height: 6.75rem;
+  padding: 1.35rem 1.4rem !important;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-gallery-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-gallery-card article {
+  background: rgba(18, 11, 8, 0.58);
+  border: 1px solid rgba(232, 202, 155, 0.08);
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-gallery-card .card-img {
+  height: 21rem !important;
+  object-position: center;
+}
+
+#stk-clone.msteakhouse-theme .gallery-note {
+  color: var(--m-text-soft);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0.85rem 0 0;
+}
+
+#stk-clone.msteakhouse-theme .faq-shell {
+  display: grid;
+  gap: 2.75rem;
+}
+
+#stk-clone.msteakhouse-theme .faq-lead {
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  margin-bottom: 0 !important;
+  text-align: left;
+}
+
+#stk-clone.msteakhouse-theme .faq-lead h2 {
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  letter-spacing: 0.18em;
+}
+
+#stk-clone.msteakhouse-theme .faq-intro {
+  color: var(--m-text);
+  line-height: 1.8;
+  margin: 1rem 0 0;
+  max-width: 25rem;
+}
+
+#stk-clone.msteakhouse-theme .faq-accordion-wide {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+#stk-clone.msteakhouse-theme #Faq-Section .accordion-item {
+  background: linear-gradient(180deg, rgba(30, 20, 14, 0.95), rgba(19, 12, 9, 0.94));
+  border: 1px solid var(--m-line);
+  border-radius: 1.35rem;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.16);
+  margin-bottom: 1rem;
+  padding: 0 1.35rem;
+}
+
+#stk-clone.msteakhouse-theme #Faq-Section .accordion-header {
+  align-items: center;
+  border-color: transparent !important;
+  gap: 1rem;
+  min-height: 5.25rem;
+  padding: 1.25rem 0;
+}
+
+#stk-clone.msteakhouse-theme #Faq-Section .accordion-header h4 {
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.45;
+  margin: 0;
+  max-width: 42rem;
+}
+
+#stk-clone.msteakhouse-theme #Faq-Section .accordion-header button {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--m-line-strong);
+  border-radius: 999px;
+  display: inline-flex;
+  flex: 0 0 2.75rem;
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+}
+
+#stk-clone.msteakhouse-theme #Faq-Section .accordion-header button svg {
+  filter: invert(0.95);
+}
+
+#stk-clone.msteakhouse-theme #Faq-Section .accordion-panel {
+  margin: 0 0 1.25rem !important;
+  padding-top: 0;
+}
+
+#stk-clone.msteakhouse-theme #Faq-Section .accordion-panel p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 0;
+  max-width: 48rem;
+}
+
+#stk-clone.msteakhouse-theme .location-map .gold {
+  background: linear-gradient(135deg, #d9b67f, #ba8342) !important;
+}
+
+#stk-clone.msteakhouse-theme .social-links img {
+  max-height: 18px;
+  width: auto;
+}
+
+#stk-clone.msteakhouse-theme .footer-logo img {
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+#stk-clone.msteakhouse-theme .msteakhouse-footer-brand span {
+  color: var(--m-cream);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+#stk-clone.msteakhouse-theme .copyright,
+#stk-clone.msteakhouse-theme .copyright p,
+#stk-clone.msteakhouse-theme .copyright a {
+  background: #0e0906 !important;
+  color: #e7d6bd !important;
+}
+
+#stk-clone.msteakhouse-theme .copyright a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  #stk-clone.msteakhouse-theme .faq-shell {
+    align-items: start;
+    grid-template-columns: minmax(18rem, 24rem) minmax(0, 1fr);
+  }
+
+  #stk-clone.msteakhouse-theme .faq-lead {
+    position: sticky;
+    top: 8rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  #stk-clone.msteakhouse-theme .msteakhouse-nav-wrapper {
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 1.15rem 3rem;
+  }
+
+  #stk-clone.msteakhouse-theme .logo {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  #stk-clone.msteakhouse-theme #scroll-logo {
+    display: inline-flex !important;
+    visibility: visible !important;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-brand img {
+    width: 62px;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-brand-copy span {
+    font-size: 0.96rem;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-main-navigation {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-main-navigation.hidden {
+    display: flex !important;
+  }
+
+  #stk-clone.msteakhouse-theme #menu-main-menu-burger-nav,
+  #stk-clone.msteakhouse-theme .msteakhouse-main-navigation > .social-links,
+  #stk-clone.msteakhouse-theme [data-burger-nav] {
+    display: none !important;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-hero-content {
+    min-height: 49rem;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-card {
+    grid-column: span 4;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-card.is-featured {
+    grid-column: 1 / -1;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-card.is-featured .card-img {
+    height: 25rem !important;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-card.is-featured .happenings-card-body {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-height: 8.5rem;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-card.is-featured .gallery-note {
+    margin: 0;
+    max-width: 34rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  #stk-clone.msteakhouse-theme .msteakhouse-site-header {
+    background: rgba(13, 9, 7, 0.94) !important;
+    border-bottom: 1px solid rgba(232, 202, 155, 0.1);
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-nav-wrapper {
+    align-items: center !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-brand-link {
+    basis: auto !important;
+    order: 1 !important;
+  }
+
+  #stk-clone.msteakhouse-theme .logo {
+    display: inline-flex !important;
+    visibility: visible !important;
+  }
+
+  #stk-clone.msteakhouse-theme #scroll-logo {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-brand img {
+    width: 50px;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-brand-copy span {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-brand-copy small {
+    font-size: 0.58rem;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-header-cta {
+    display: none !important;
+  }
+
+  #stk-clone.msteakhouse-theme [data-burger-nav] {
+    left: auto !important;
+    margin-left: auto;
+    order: 3 !important;
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-main-navigation {
+    basis: 100% !important;
+    border-top: 1px solid rgba(232, 202, 155, 0.12);
+    margin-top: 0.75rem;
+    order: 4 !important;
+    padding: 0.5rem 0 0.25rem;
+    width: 100%;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-main-navigation.hidden {
+    display: none !important;
+  }
+
+  #stk-clone.msteakhouse-theme #menu-main-menu-gb {
+    display: none !important;
+  }
+
+  #stk-clone.msteakhouse-theme #menu-main-menu-burger-nav {
+    display: grid !important;
+    gap: 0 !important;
+    margin-top: 0 !important;
+    width: 100%;
+  }
+
+  #stk-clone.msteakhouse-theme #menu-main-menu-burger-nav li {
+    border-bottom: 1px solid rgba(232, 202, 155, 0.12);
+    padding: 0.9rem 0;
+  }
+
+  #stk-clone.msteakhouse-theme #menu-main-menu-burger-nav a {
+    color: var(--m-cream) !important;
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-main-navigation > .social-links {
+    justify-content: flex-start !important;
+    margin-top: 0.25rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-top: 1.25rem !important;
+  }
+
+  #stk-clone.msteakhouse-theme #main-nav.is-open {
+    height: auto;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-hero-content {
+    align-items: center !important;
+    padding: 6.8rem 1.35rem 3.5rem !important;
+    text-align: center !important;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-content h1 {
+    max-width: 12ch;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-lead {
+    max-width: 30rem;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-actions {
+    justify-content: center;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-actions .btn,
+  #stk-clone.msteakhouse-theme .hero-actions a {
+    width: min(100%, 21rem);
+  }
+
+  #stk-clone.msteakhouse-theme .career-role-list {
+    columns: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  #stk-clone.msteakhouse-theme .hero {
+    min-height: 35rem;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.34em;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-content h1 {
+    font-size: clamp(2.8rem, 10vw, 4.25rem) !important;
+    letter-spacing: 0.14em;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-content h4 {
+    font-size: clamp(1.3rem, 5.2vw, 1.8rem) !important;
+  }
+
+  #stk-clone.msteakhouse-theme .hero-lead {
+    font-size: 0.95rem;
+  }
+
+  #stk-clone.msteakhouse-theme #Happenings-Grid .btn {
+    align-self: flex-start;
+  }
+
+  #stk-clone.msteakhouse-theme .msteakhouse-gallery-card .card-img {
+    height: 16rem !important;
+  }
+
+  #stk-clone.msteakhouse-theme #Faq-Section .accordion-item {
+    padding: 0 1rem;
+  }
+
+  #stk-clone.msteakhouse-theme #Faq-Section .accordion-header {
+    min-height: 4.75rem;
+  }
+
+  #stk-clone.msteakhouse-theme #Faq-Section .accordion-header h4 {
+    font-size: 0.92rem;
+  }
+}
