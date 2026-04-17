@@ -139,13 +139,13 @@ function styleGoldButton(node) {
   node.classList.remove("red");
   node.classList.add("gold");
   node.classList.remove("!text-white");
-  node.style.background = "#c18a45";
-  node.style.borderColor = "#c18a45";
-  node.style.color = "#16110e";
+  node.style.removeProperty("background");
+  node.style.removeProperty("border-color");
+  node.style.removeProperty("color");
 
   const label = node.querySelector(".text-wrap");
   if (label) {
-    label.style.color = "#16110e";
+    label.style.removeProperty("color");
   }
 }
 
@@ -280,7 +280,7 @@ function applyMsteakhouseContent(root) {
   if (heroSection) {
     heroSection.classList.add("msteakhouse-hero");
     heroSection.style.backgroundImage =
-      "linear-gradient(120deg, rgba(11,7,5,0.78) 0%, rgba(11,7,5,0.56) 48%, rgba(11,7,5,0.82) 100%), url(/msteakhouse/interior-1.jpg)";
+      "linear-gradient(180deg, rgba(11,7,5,0.48) 0%, rgba(11,7,5,0.76) 100%), url(/msteakhouse/interior-3.jpg)";
   }
 
   const heroContent = root.querySelector(".hero-content");
@@ -291,13 +291,13 @@ function applyMsteakhouseContent(root) {
   const heroLead = ensureElement(heroContent, ".hero-lead", "p", "hero-lead");
 
   if (heroEyebrow) {
-    heroEyebrow.textContent = "Das Original der Mook Group";
+    heroEyebrow.textContent = "Frankfurt am Main";
   }
   setText(root.querySelector(".hero-content h1"), "M-Steakhouse");
-  setText(root.querySelector(".hero-content h4"), "Frankfurt am Main");
+  setText(root.querySelector(".hero-content h4"), "Klassisches Steakhouse");
   if (heroLead) {
     heroLead.textContent =
-      "Prime Cuts, klassische Steakhouse-Atmosphäre und ein Haus, das seit über zwanzig Jahren die deutsche Steakhouse-Kultur mitprägt.";
+      "Prime Cuts, legendaere Atmosphaere und ein Abend im Stil der Mook Group.";
   }
 
   const heroHeading = heroContent?.querySelector("h1");
@@ -667,12 +667,12 @@ function applyMsteakhouseContent(root) {
 
   const faqLead = faqSection?.querySelector(".container > .flex");
   faqLead?.classList.add("faq-lead");
-  setText(faqLead?.querySelector("h2"), "Häufige Fragen");
+  setText(faqLead?.querySelector("h2"), "Haeufige Fragen");
 
   const faqIntro = ensureElement(faqLead, ".faq-intro", "p", "faq-intro");
   if (faqIntro) {
     faqIntro.textContent =
-      "Reservierung, Öffnungszeiten, Anfahrt und Bewerbung kompakt auf einen Blick.";
+      "Reservierung, Oeffnungszeiten, Anfahrt und Karriere kompakt auf einen Blick.";
   }
 
   const faqAccordion = faqSection?.querySelector(".accordion-container");
@@ -683,32 +683,32 @@ function applyMsteakhouseContent(root) {
     {
       question: "Wo befindet sich das M-Steakhouse?",
       answer:
-        `<p>Sie finden das M-Steakhouse in der <a href="${MAP_URL}" target="_blank" rel="noopener noreferrer">Feuerbachstraße 11a, 60325 Frankfurt am Main</a>.</p>`,
+        `<p>Sie finden das M-Steakhouse in der <a href="${MAP_URL}" target="_blank" rel="noopener noreferrer">Feuerbachstrasse 11a, 60325 Frankfurt am Main</a>.</p>`,
     },
     {
-      question: "Wie sind die Öffnungszeiten?",
+      question: "Wie sind die Oeffnungszeiten?",
       answer:
         "<p>Montag bis Freitag: 12:00 - 15:00 Uhr und 18:00 - 00:00 Uhr</p><p>Samstag: 18:00 - 00:00 Uhr</p><p>Sonntag: geschlossen</p>",
     },
     {
       question: "Wie kann ich einen Tisch reservieren?",
       answer:
-        `<p>Reservierungen laufen online über die offizielle Buchungsseite. <a href="${RESERVATION_URL}" target="_blank" rel="noopener noreferrer">Hier Tisch reservieren</a>.</p>`,
+        `<p>Reservierungen laufen online ueber die offizielle Buchungsseite. <a href="${RESERVATION_URL}" target="_blank" rel="noopener noreferrer">Hier Tisch reservieren</a>.</p>`,
     },
     {
       question: "Wo finde ich die aktuelle Speisekarte?",
       answer:
-        `<p>Die aktuelle M-Steakhouse Speisekarte steht als PDF bereit. <a href="${MENU_URL}" target="_blank" rel="noopener noreferrer">Speisekarte öffnen</a>.</p>`,
+        `<p>Die aktuelle M-Steakhouse Speisekarte steht als PDF bereit. <a href="${MENU_URL}" target="_blank" rel="noopener noreferrer">Speisekarte oeffnen</a>.</p>`,
     },
     {
-      question: "Sind Gutscheine der Mook Group gültig?",
+      question: "Sind Gutscheine der Mook Group gueltig?",
       answer:
-        "<p>Ja. Gutscheine sind in allen Restaurants der Mook Group gültig.</p>",
+        "<p>Ja. Gutscheine sind in allen Restaurants der Mook Group gueltig.</p>",
     },
     {
       question: "Wie kann ich mich bewerben?",
       answer:
-        `<p>Bewerbungen können direkt an <a href="${CAREER_URL}">info@mook-group.de</a> gesendet werden.</p>`,
+        `<p>Bewerbungen koennen direkt an <a href="${CAREER_URL}">info@mook-group.de</a> gesendet werden.</p>`,
     },
   ];
 
@@ -723,15 +723,12 @@ function applyMsteakhouseContent(root) {
 
   const mapSection = root.querySelector(".location-map");
   if (mapSection) {
+    mapSection.classList.add("msteakhouse-map-section");
     setHTML(
       mapSection.querySelector("h2"),
       'Frankfurt am Main <span class="text-gold-foil">Deutschland</span>',
     );
-    setLink(mapSection.querySelector(".btn"), {
-      href: OFFICIAL_URL,
-      text: "Restaurantseite",
-      target: "_blank",
-    });
+    mapSection.querySelector(".btn")?.remove();
   }
 
   const footerLogo = root.querySelector("footer .footer-logo a.logo");
@@ -743,10 +740,15 @@ function applyMsteakhouseContent(root) {
 
   keepInstagramOnly(root.querySelector("footer .social-links"));
 
+  const footerEmbedWrapper = root.querySelector('footer iframe[src*="mixcloud"]')?.parentElement;
+  if (footerEmbedWrapper) {
+    footerEmbedWrapper.remove();
+  }
+
   const footerItems = [
-    { text: "Über uns", href: "#Experience-Section" },
+    { text: "Ueber uns", href: "#Experience-Section" },
     { text: "Kontakt", href: "#Location-Details" },
-    { text: "Menü PDF", href: MENU_URL, target: "_blank" },
+    { text: "Menue PDF", href: MENU_URL, target: "_blank" },
     { text: "Galerie", href: "#Happenings-Grid" },
     { text: "Karriere", href: "#Careers-Section" },
     { text: "Gutscheine", href: OFFICIAL_URL, target: "_blank" },
@@ -756,7 +758,7 @@ function applyMsteakhouseContent(root) {
   applyMenuItems(root.querySelector("#menu-footer-menu-gb"), footerItems);
 
   const copyrightLines = root.querySelectorAll("footer .copyright p");
-  setText(copyrightLines[0], "© Copyright 2026 by Mook Group. All Rights Reserved.");
+  setText(copyrightLines[0], "Copyright 2026 by Mook Group. All Rights Reserved.");
 
   if (copyrightLines[1]) {
     copyrightLines[1].innerHTML =
@@ -773,6 +775,7 @@ export default function PageEnhancer() {
     }
 
     applyMsteakhouseContent(root);
+    root.classList.add("is-enhanced");
 
     const cleanupFns = [];
     const media = gsap.matchMedia();
@@ -830,13 +833,7 @@ export default function PageEnhancer() {
     if (mapContainer) {
       mapContainer.dataset.mapReady = "true";
       mapContainer.classList.add("msteakhouse-map-fallback");
-      mapContainer.innerHTML = [
-        '<div class="map-fallback-card">',
-        '<div class="clone-map-pin" aria-hidden="true"></div>',
-        "<p>Feuerbachstrasse 11a<br>60325 Frankfurt am Main</p>",
-        `<a href="${MAP_URL}" target="_blank" rel="noopener noreferrer">Route in Google Maps</a>`,
-        "</div>",
-      ].join("");
+      mapContainer.innerHTML = `<iframe class="map-fallback-embed" src="https://www.google.com/maps?q=Feuerbachstrasse%2011a%2C%2060325%20Frankfurt%20am%20Main&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Karte des M-Steakhouse in Frankfurt am Main"></iframe>`;
     }
 
     const header = root.querySelector("#main-nav");
@@ -951,17 +948,7 @@ export default function PageEnhancer() {
         ".hero-eyebrow, .hero-content h1, .hero-content h4, .hero-lead, .hero-actions .btn, .hero-actions a",
       );
 
-      gsap.fromTo(
-        heroItems,
-        { autoAlpha: 0, y: 22 },
-        {
-          autoAlpha: 1,
-          duration: 0.65,
-          ease: "power3.out",
-          stagger: 0.08,
-          y: 0,
-        },
-      );
+      gsap.set(heroItems, { autoAlpha: 1, y: 0 });
 
       gsap.utils
         .toArray(root.querySelectorAll(".fade, .reveal"))
@@ -989,6 +976,7 @@ export default function PageEnhancer() {
     ScrollTrigger.refresh();
 
     return () => {
+      root.classList.remove("is-enhanced");
       cleanupFns.forEach((fn) => fn());
       media.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
